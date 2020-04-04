@@ -8,6 +8,13 @@ document.getElementById('search').addEventListener('click', event => { event.pre
     .then(weather => {
       document.getElementById('city').innerHTML = ''
       let city = document.createElement('div')
-      
+      city.innerHTML = `
+      <p>Location: ${location.name}</p>
+      <p>Time: ${location.time}</p>
+      <p>Temperature: ${weather.current.temp_f}</p>
+      <p>Humidity: ${weather.current.humdity}</p>
+      <p>Wind Speed: ${weather.current.wind_mph}</p>
+      <p>UV Index: ${weather.current.uv}</p>
+      `
     })
 })
